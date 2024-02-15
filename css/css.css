@@ -20,30 +20,39 @@
    --backgr: #f1e695;
    --bgA: rgb(239, 120, 211);
    --bgB: rgb(143, 225, 142); 
+   --bgC: rgb(144, 14, 111); 
+   --bgD: rgba(76, 55, 16, 0.413);
+   --bgE: #4449a3; 
 
    /* OPGAVE 1: definer en palette med mindst 5 egentlige farver plus kontrasterne sort og hvid */
  }
 
 /* Logo: vælg selv størrelsen */
 #logo {
-  width: 250px;
+  width: 111px;
   height: auto;
-  /* OPGAVE 2: Hvis billedet skal have denne størrelse, hvorfor så ikke skalere billedet i Photoshop? */ 
+  /* OPGAVE 2: Hvis billedet skal have denne størrelse, 
+  hvorfor så ikke skalere billedet i Photoshop? */ 
 }
 
 /* responsive billeder */
 .resp {
   width: 100%;
-  height: autox;
+  height: auto;
 }
 
 header,
 footer {
   background-color: var(--contrast);
-  color: var(--backgr)
+  color: var(--backgr);
 }
 
-/* OPGAVE 3: Store skærme: Skjul .smaller og .burger med CSS */
+/* OPGAVE 3: Store skærme: Skjul .smaller og   med CSS */
+
+.smaller,
+.burger {
+  /*display: none;*/
+}
 
 /* OPGAVE 4: Flexbox
 
@@ -53,8 +62,11 @@ c) Hvad er padding? Og hvad sker der hvis du sætter padding til fx 32px?
 d) Brug justify-content til at fordele dine kolonner. Prøv alle muligheder.
 
 Se: https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-justify-content
-
 */
+
+.row {
+  display: flex;
+}
 
 /* OPGAVE 5: Responsivt design
 
@@ -80,21 +92,47 @@ Herunder ser du de responsive regler, der skal redigeres.
     /* brug dine variabler her! */
     background-color: var(--bgB); 
   }
+  .row {
+    display: block;
+  }
+  .burger {
+    display: block;
+  }
+
 }
 
 /* ... fortsæt selv med breakpoints ... */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+  .burger {
+    display: none;
+  }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {}
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+  body {
+    /* brug dine variabler her! */
+    background-color: var(--backgr); 
+  }
+  .row {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+  .burger {
+    display: none;
+  }
+}
 
 /* Opgave 6: Vis og skjul relevante menuer 
 
